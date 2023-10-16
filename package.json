@@ -1,0 +1,45 @@
+{
+  "name": "palia-tracker",
+  "description": "Tracker for various things for Palia game",
+  "version": "1.2.0",
+  "license": "LGPL-3.0-only",
+  "author": {
+    "name": "sunsetdestroy",
+    "email": "sunset@femboy.page"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "cross-env NODE_ENV=development node --nolazy -r ts-node/register src/index.ts",
+    "test": "cross-env NODE_ENV=development node --nolazy -r ts-node/register src/test.ts",
+    "lint": "eslint .",
+    "prepare": "husky install",
+    "start": "cross-env NODE_ENV=production node dist/index.js"
+  },
+  "dependencies": {
+    "@starkow/logger": "^2.1.0",
+    "common-tags": "^1.8.2",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.0.3",
+    "ioredis": "^5.3.2",
+    "node-cron": "^3.0.2",
+    "puregram": "^2.11.0",
+    "undici": "^5.23.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.6.3",
+    "@commitlint/config-conventional": "^17.6.3",
+    "@types/common-tags": "^1.8.1",
+    "@types/node": "^20.1.7",
+    "@types/node-cron": "^3.0.8",
+    "@typescript-eslint/eslint-plugin": "^5.59.6",
+    "@typescript-eslint/parser": "^5.59.6",
+    "eslint": "^8.40.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.7.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "husky": "^8.0.3",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
+  }
+}

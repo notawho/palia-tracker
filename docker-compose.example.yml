@@ -1,0 +1,17 @@
+services:
+  redis:
+    image: redis/redis-stack-server:latest
+    restart: unless-stopped
+    volumes:
+      - './data:/data'
+    healthcheck:
+      test: ["CMD-SHELL", "redis-cli ping | grep PONG"]
+      interval: 1s
+      timeout: 3s
+      retries: 5
+  bot:
+    build: .
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - './accounts.json:/app/accounts.json:ro'
